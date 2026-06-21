@@ -29,10 +29,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          # Project Pages serve from /broger. Remove this once the custom
-          # domain broger.ch is connected (then the site builds at root).
-          GH_PAGES_BASE: /broger
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
