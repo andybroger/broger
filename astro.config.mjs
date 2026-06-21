@@ -2,8 +2,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// `base` is '/' for local dev and the custom domain, but the GitHub Pages
-// project URL lives under /broger — the deploy workflow sets GH_PAGES_BASE.
+// `base` is '/' for local dev and the broger.ch custom domain.
+// GH_PAGES_BASE exists only for manual/project-page experiments; production
+// deploys must build at root so assets work on https://broger.ch.
 // Normalize to a trailing slash so `${BASE_URL}images/...` joins cleanly.
 const raw = process.env.GH_PAGES_BASE || '/';
 const base = raw.endsWith('/') ? raw : raw + '/';

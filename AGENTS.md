@@ -12,6 +12,18 @@ racer — `broger.ch`. It is a **single-page** static site built with
 deploys automatically via GitHub Actions whenever changes land on the `main`
 branch. The site language is **German** — keep all visitor-facing text in German.
 
+Current source of truth:
+
+- Local working tree used by the owner: `/Users/nd/broger-site`
+- Primary GitHub repository: `https://github.com/andybroger/broger`
+- Live site: `https://broger.ch`
+- Primary remote name: `origin`
+- Historical remote name, if present: `hyprsh`
+
+Do not copy or merge content from old temporary worktrees unless the owner
+explicitly asks. In particular, ignore earlier scaffolds such as
+`/Users/nd/Code/broger.ch`; this repository is the ground truth.
+
 ## Golden rules for working with the owner
 
 - The owner is **not technical**. They will describe changes in plain language
@@ -24,6 +36,10 @@ branch. The site language is **German** — keep all visitor-facing text in Germ
   past tense; the `retirement` block in `src/data/site.js` is his farewell.
 - After ANY change, you MUST (1) build successfully and (2) publish (see below).
 - Keep changes small and verifiable. Always run the build before publishing.
+- Use **npm** and `package-lock.json`. Do not introduce pnpm/yarn unless the
+  owner explicitly requests a package-manager change.
+- The GitHub repository must remain **public** while GitHub Pages is used for
+  `broger.ch`. Making it private disables or breaks public Pages for this setup.
 
 ## 1. Reconstruct the dev environment
 
@@ -70,8 +86,9 @@ want to review before publishing.
 | Top navigation links | `src/components/Nav.astro` |
 | Site-wide `<head>`, fonts, meta tags | `src/layouts/Base.astro` |
 | Colors, fonts, animations | `src/styles/global.css` |
-| Photos | `public/images/photos/` |
+| Photos optimized by Astro | `src/assets/photos/` |
 | Sponsor logos | `public/images/logos/` |
+| Favicon / static root assets | `public/` |
 
 It is one page; the nav items are anchor links (`#person`, `#resultate`, …) that
 scroll to sections within `src/pages/index.astro`.
@@ -86,7 +103,7 @@ Reference it via the `photo('yourfile.jpg')` helper passed to `<Image>` in
 
 ## 4. Publish changes (deploy)
 
-Publishing = commit to `main` and push. GitHub Actions
+Publishing = commit to `main` and push to `origin`. GitHub Actions
 (`.github/workflows/deploy.yml`) then builds and deploys to GitHub Pages
 automatically (about 1–2 minutes).
 
@@ -94,34 +111,37 @@ automatically (about 1–2 minutes).
 npm run build                      # 1. confirm it builds with no errors
 git add -A
 git commit -m "Describe the change in plain language"
-git push                           # 2. triggers the deploy
+git push origin main               # 2. triggers the deploy
 ```
 
 Watch the deploy with `gh run watch` (or the repo's **Actions** tab). When it
 finishes, the change is live. Tell the owner it's published and give them the URL.
 
-- **Live URL (project page):** `https://hyprsh.github.io/broger/`
-- **Final URL (after DNS):** `https://broger.ch`
+- **Live URL:** `https://broger.ch`
+- **Repository:** `https://github.com/andybroger/broger`
 
 If `gh` is not authenticated, run `gh auth login` once.
 
-## 5. The one technical gotcha: the base path
+## 5. Custom domain and base path
 
-GitHub project pages serve from a sub-path (`/broger/`), but the local dev server
-and the future custom domain serve from the root (`/`). This is already handled:
+The site is deployed to the custom domain `https://broger.ch`, so it must build
+for the root path `/`.
 
-- `astro.config.mjs` reads `GH_PAGES_BASE`; the deploy workflow sets it to
-  `/broger`. Locally it defaults to `/`.
-- All asset URLs go through the `img()` helper / `import.meta.env.BASE_URL`, so
-  they get the right prefix in every environment.
-- **Never hard-code an absolute path like `/broger/images/...`** — use the helper.
+- `astro.config.mjs` still supports `GH_PAGES_BASE` for local experiments, but
+  `.github/workflows/deploy.yml` must **not** set `GH_PAGES_BASE`.
+- Do not build production for `/broger`; that was only for the temporary GitHub
+  project URL before the custom domain was connected.
+- All static logo/favicon URLs should use `import.meta.env.BASE_URL` or the
+  existing `logo()` helper. Do not hard-code `/broger/...`.
+- Photos imported from `src/assets/photos/` are handled by Astro assets and do
+  not need manual URL prefixing.
 
-### When the custom domain broger.ch is connected
-1. Add a file `public/CNAME` containing exactly `broger.ch`.
-2. In `.github/workflows/deploy.yml`, remove the `GH_PAGES_BASE: /broger` line
-   (so the site builds at root `/`).
-3. Point the `broger.ch` DNS at GitHub Pages (A records to GitHub's IPs, or a
-   CNAME for `www`). Enable "Enforce HTTPS" in the repo's Pages settings.
+GitHub Pages is configured with:
+
+- Custom domain: `broger.ch`
+- HTTPS: enforced
+- DNS: apex `broger.ch` points to GitHub Pages A records; `www` may CNAME to
+  `broger.ch` or `andybroger.github.io` depending on DNS provider behavior.
 
 ## 6. House style
 
@@ -131,3 +151,5 @@ and the future custom domain serve from the root (`/`). This is already handled:
 - New sections should use the `reveal` class to get the scroll-in animation, and
   an `id` if they need a nav anchor.
 - Run `npm run build` before every commit; never push a build that fails.
+- Do not commit generated folders (`dist/`, `.astro/`, `node_modules/`) or local
+  machine files (`.DS_Store`).

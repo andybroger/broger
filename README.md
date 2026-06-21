@@ -3,6 +3,18 @@
 Persönliche Website von **Jakob (Köbi) Broger**. Die Website wird nicht direkt
 von Hand bearbeitet, sondern über Codex verwaltet.
 
+Die aktuelle Website ist online unter:
+
+```text
+https://broger.ch
+```
+
+Der aktuelle GitHub-Stand liegt hier:
+
+```text
+https://github.com/andybroger/broger
+```
+
 Codex liest beim Öffnen dieses Projekts automatisch [`AGENTS.md`](./AGENTS.md).
 Dort stehen alle technischen Anweisungen, damit Codex die Website korrekt
 ändern, lokal prüfen und veröffentlichen kann.
@@ -21,7 +33,7 @@ Sag Codex einfach in normaler Sprache, was geändert werden soll.
 4. Sende Codex diese Nachricht:
 
    ```text
-   Klone https://github.com/hyprsh/broger.git in einen Ordner namens broger-site.
+   Klone https://github.com/andybroger/broger.git in einen Ordner namens broger-site.
    Wenn das erledigt ist, sag mir, dass ich diesen Ordner als Projekt öffnen soll.
    ```
 
@@ -70,8 +82,13 @@ Die Vorschau passt. Baue die Website, veröffentliche sie und sag mir, wenn sie 
 Codex prüft die Website, veröffentlicht die Änderung und wartet, bis GitHub Pages
 fertig ist. Erst danach ist die Änderung online sichtbar.
 
-- Projektseite: `https://hyprsh.github.io/broger/`
-- Finale Domain: `https://broger.ch`
+- Live-Domain: `https://broger.ch`
+- GitHub-Repo: `https://github.com/andybroger/broger`
+
+Wichtig: Das Repository muss für GitHub Pages in dieser Konfiguration öffentlich
+bleiben. Wenn es privat gemacht wird, wird `broger.ch` über GitHub Pages nicht
+mehr korrekt ausgeliefert. Für ein privates Repository müsste später ein anderer
+Hoster wie Cloudflare Pages, Netlify oder Vercel verwendet werden.
 
 ## Was Codex braucht
 
@@ -82,3 +99,10 @@ fertig ist. Erst danach ist die Änderung online sichtbar.
   vorhanden die Website.
 - Wenn du unsicher bist: bitte Codex, die Änderung zuerst lokal zu zeigen, bevor
   sie veröffentlicht wird.
+
+## Für andere KI-Assistenten
+
+Dieses Repository ist die Quelle der Wahrheit. Bitte keine Inhalte aus alten
+temporären Ordnern oder Repositories übernehmen. Die wichtigsten Inhalte stehen
+in `src/data/site.js`; Fotos stehen in `src/assets/photos/`; Sponsorenlogos in
+`public/images/logos/`. Vor dem Veröffentlichen immer `npm run build` ausführen.
