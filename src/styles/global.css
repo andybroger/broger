@@ -28,6 +28,26 @@ h1, h2, h3, h4, .font-display {
   letter-spacing: 0.01em;
 }
 
+.hero-backdrop,
+.hero-full-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-backdrop {
+  object-fit: cover;
+  filter: blur(18px);
+  opacity: 0.45;
+  transform: scale(1.06);
+}
+
+.hero-full-image {
+  object-fit: contain;
+  object-position: center;
+}
+
 /* Scroll-reveal: elements fade + rise into view */
 .reveal {
   opacity: 0;
