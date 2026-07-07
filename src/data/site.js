@@ -133,8 +133,8 @@ export const retirement = {
   eyebrow: 'Rücktritt im Jahr 2023',
   title: 'Alles hat seine Zeit',
   paragraphs: [
-    'Das Skikjöring ist die rennsportliche Weltexklusivität von White Turf. Daran durfte ich als Fahrer während vielen Jahren erfolgreich mitwirken. Alles hat seine Zeit: für mich ist als aktiver Skikjöringfahrer Schluss.',
-    'Nach 24 Saisons als aktiver Fahrer und mit bald 63 Altersjahren ist der Zeitpunkt für den Rücktritt und das Platzmachen für den Nachwuchs gekommen. Ich danke den Besitzern und Trainern für ihr Vertrauen, dem White Turf, der Credit Suisse und den vielen Helfern für ihr Engagement, meinen Konkurrenten für ihre Fairness, meinen Fans für die treue Unterstützung und meiner Familie für das Verständnis meiner aussergewöhnlichen Passion.',
+    'Das Skikjöring ist die rennsportliche Weltexklusivität von White Turf. Daran durfte ich als Fahrer während vielen Jahren erfolgreich mitwirken. Alles hat seine Zeit: für mich ist als aktiver Skikjöringfahrer war 2023 Schluss.',
+    'Nach 24 Saisons als aktiver Fahrer und mit bald 63 Altersjahren war der Zeitpunkt für den Rücktritt und das Platzmachen für den Nachwuchs gekommen. Ich danke den Besitzern und Trainern für ihr Vertrauen, dem White Turf, der Credit Suisse und den vielen Helfern für ihr Engagement, meinen Konkurrenten für ihre Fairness, meinen Fans für die treue Unterstützung und meiner Familie für das Verständnis meiner aussergewöhnlichen Passion.',
   ],
   signoff: 'Allegra und bis bald am White Turf',
   signature: 'Jakob (Köbi) Broger',
