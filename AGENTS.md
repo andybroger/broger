@@ -32,7 +32,7 @@ explicitly asks. In particular, ignore earlier scaffolds such as
 - **Almost all text and data lives in one file: `src/data/site.js`.** Prefer
   editing there over touching page markup. It holds the profile, career timeline,
   statistics table, top horses, sponsors, and the retirement statement.
-- Jakob is **retired** (after the 2022 season). Keep visitor-facing copy in the
+- Jakob is **retired** (in 2023). Keep visitor-facing copy in the
   past tense; the `retirement` block in `src/data/site.js` is his farewell.
 - After ANY change, you MUST (1) build successfully and (2) publish (see below).
 - Keep changes small and verifiable. Always run the build before publishing.

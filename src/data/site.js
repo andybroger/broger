@@ -16,9 +16,54 @@ export const career = [
   { period: '1985–1998', text: 'Vorstandsmitglied Schweizer Rennreiter-Verband (Präsident 1994–1998)' },
   { period: '1986–2015', text: 'Vorstandsmitglied Galopp Schweiz (Präsident 2011–2015)' },
   { period: '1998–2007', text: 'Präsident Rennpferdebesitzer-Club' },
-  { period: '1996–2022', text: 'Aktiver Skikjöringfahrer' },
+  { period: '1996–2023', text: 'Aktiver Skikjöringfahrer' },
   { period: 'seit 2017', text: 'Präsident Skikjöring Drivers Association' },
   { period: 'seit 2024', text: 'Mitglied Skikjöring-Kommission' },
+];
+
+export const crownRoad = [
+  {
+    time: 'Februar 1996',
+    title: 'Das Debüt auf dem gefrorenen See',
+    text:
+      'Der Beginn einer geschichtsträchtigen Ära: Jakob „Köbi“ Broger bestritt im Februar 1996 seinen ersten offiziellen Start beim White Turf in St. Moritz.',
+  },
+  {
+    time: 'Februar 1997',
+    title: 'Erste Siege und die erste Krone mit Efir',
+    text:
+      'Nur ein Jahr nach dem Debüt gelangen auf dem gefrorenen See die ersten beiden Rennsiege. Mit Efir sicherte sich Köbi Broger seine erste Krone als König vom Engadin.',
+  },
+  {
+    time: 'Späte 1990er',
+    title: 'Der Durchbruch im Engadin',
+    text:
+      'Als erster Fahrer aus dem Schweizer Flachland brach Jakob Broger endgültig in die traditionelle Domäne der Engadiner Skikjöringfahrer ein.',
+  },
+  {
+    time: '1999–2005',
+    title: 'Die goldene Ära Volta',
+    text:
+      'Mit Volta entstand das erfolgreichste Gespann seiner Karriere: 12 Siege aus 21 Starts und mehrere prägende Saisons auf dem Eis.',
+  },
+  {
+    time: '2007–2011',
+    title: 'Die Ära King George',
+    text:
+      'King George prägte fünf Jahre von Köbis Laufbahn. Unvergesslich blieb die Saison 2008 mit drei Siegen in drei Rennen.',
+  },
+  {
+    time: '2019',
+    title: 'Comeback mit Strade Kirk',
+    text:
+      'Mit Strade Kirk gelang die Rückkehr auf die Siegerstrasse und ein weiterer Erfolg in einer langen, aussergewöhnlichen Karriere.',
+  },
+  {
+    time: '2020–2022',
+    title: 'Die letzten Saisons mit Vienna Woods',
+    text:
+      'Mit Vienna Woods fuhr Köbi Broger in seinen letzten aktiven Saisons nochmals um Spitzenplätze und beendete seine Karriere mit dem Rücktritt im Jahr 2023 sowie elf Kronen.',
+  },
 ];
 
 // Career highlights — the headline numbers.
@@ -57,7 +102,7 @@ export const stats = {
 export const topHorses = [
   { name: 'Volta', years: '1999–2004', trainer: 'Miro Weiss', owner: 'Stall Zürisee', note: '12 Siege aus 21 Starts, das erfolgreichste Gespann der Karriere.' },
   { name: 'King George', years: '2007–2011', trainer: 'Miro Weiss', owner: 'Charlotte Haselbach', note: '8 Siege aus 11 Starts auf dem gefrorenen St. Moritzersee.' },
-  { name: 'Vienna Woods', years: '2020–2022', trainer: 'Carina Fey', owner: 'Stall Allegra Racing Club', note: 'Die letzten Saisons vor dem Rücktritt 2022.' },
+  { name: 'Vienna Woods', years: '2020–2022', trainer: 'Carina Fey', owner: 'Stall Allegra Racing Club', note: 'Die letzten Saisons vor dem Rücktritt 2023.' },
   { name: 'Efir', years: '1997–1998', trainer: '', owner: '', note: 'Frühe Erfolge zu Beginn der Skikjöring-Laufbahn.' },
 ];
 
@@ -83,10 +128,9 @@ export const partners = [
   { name: 'SRV Rennreiter', logo: 'srv.png', url: 'https://rennreiter.ch' },
 ];
 
-// Career end — shown as a prominent statement section. Jakob retired after the
-// 2022 season. Text condensed from his farewell message of 31. Dezember 2022.
+// Career end — shown as a prominent statement section. Jakob retired in 2023.
 export const retirement = {
-  eyebrow: 'Rücktritt nach der Saison 2022',
+  eyebrow: 'Rücktritt im Jahr 2023',
   title: 'Alles hat seine Zeit',
   paragraphs: [
     'Das Skikjöring ist die rennsportliche Weltexklusivität von White Turf. Daran durfte ich als Fahrer während vielen Jahren erfolgreich mitwirken. Alles hat seine Zeit: für mich ist als aktiver Skikjöringfahrer Schluss.',
