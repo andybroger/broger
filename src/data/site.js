@@ -21,6 +21,16 @@ export const career = [
   { period: 'seit 2024', text: 'Mitglied Skikjöring-Kommission' },
 ];
 
+export const kingTitle = {
+  eyebrow: 'White Turf St. Moritz',
+  title: 'Der Titel «König vom Engadin»',
+  paragraphs: [
+    'Der exklusive White Turf – die weltberühmten Pferderennen auf dem zugefrorenen St. Moritzersee – findet jedes Jahr an drei Sonntagen im Februar statt.',
+    'Die Skikjöringfahrer kämpfen dabei nicht nur um den Tagessieg, sondern auch um den prestigeträchtigen Titel «König vom Engadin». Dieser wird jedes Jahr dem Fahrer verliehen, der über alle Rennen hinweg die meisten Punkte erzielt.',
+    'Der Gesamtsieger darf diesen traditionsreichen und ehrenvollen Titel für ein Jahr tragen. Entsprechend gross ist die Motivation der Könige, ihre Krone in der folgenden Saison erfolgreich zu verteidigen, während die Konkurrenz alles daran setzt, den neuen «König vom Engadin» zu stellen.',
+  ],
+};
+
 export const crownRoad = [
   {
     time: 'Februar 1996',
