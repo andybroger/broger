@@ -15,9 +15,9 @@ export const career = [
   { period: 'seit 1985', text: 'Rennpferdebesitzer' },
   { period: '1985–1998', text: 'Vorstandsmitglied Schweizer Rennreiter-Verband (Präsident 1994–1998)' },
   { period: '1986–2015', text: 'Vorstandsmitglied Galopp Schweiz (Präsident 2011–2015)' },
-  { period: '1998–2007', text: 'Präsident Rennpferdebesitzer-Club' },
+  { period: '1998–2007', text: 'Präsident Club der Rennpferdebesitzer' },
   { period: '1996–2023', text: 'Aktiver Skikjöringfahrer' },
-  { period: 'seit 2017', text: 'Präsident Skikjöring Drivers Association' },
+  { period: 'seit 2017', text: 'Initiant und Gründungspräsident Skikjöring Drivers Association' },
   { period: 'seit 2024', text: 'Mitglied Skikjöring-Kommission' },
 ];
 
@@ -108,7 +108,7 @@ export const topHorses = [
 
 export const sponsoring = {
   intro:
-    'Als aktiver Pferdesportler engagiert sich Jakob Broger für die Förderung des Nachwuchses. Über seine Firmen Intool AG und Calixus AG ist er ganzjährig Hauptsponsor der Ponyrennen.',
+    'Als aktiver Pferdesportler engagiert sich Jakob Broger für die Förderung des Nachwuchses. Über seine Firmen Intool AG und Calixus AG ist er langjähriger Sponsor der Ponyrennen.',
   blocks: [
     { company: 'Intool AG', supports: 'Grosse Ponys (Kategorie D, Stockmass < 150 cm)' },
     { company: 'Calixus AG', supports: 'Ganz kleine Ponys (Kategorie A, Stockmass < 120 cm)' },
