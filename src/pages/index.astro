@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL;
 const logo = (p) => `${base}images/logos/${p}`; // logos stay in public/
 
 // Photos live in src/assets/photos and are optimized by Astro at build time.
-const photoMods = import.meta.glob('../assets/photos/*.jpg', { eager: true, import: 'default' });
+const photoMods = import.meta.glob('../assets/photos/*.{jpg,png}', { eager: true, import: 'default' });
 const photo = (name) => photoMods[`../assets/photos/${name}`];
 
 const personal = [
@@ -44,6 +44,11 @@ const gallery = [
   { name: 'award-federer-2022.jpg', alt: 'Jakob Broger mit Pokal und Roger Federer am White Turf', cls: 'col-span-2 row-span-2' },
   { name: 'volta-bogen-2005.jpg', alt: 'Skikjöring-Rennen mit Volta im Bogen', cls: 'col-span-2' },
   { name: 'volta-kroenung-2003.jpg', alt: 'Krönung mit Volta durch Miss Schweiz', cls: 'col-span-2' },
+  { name: 'volta-finish-2002.jpg', alt: 'Volta im Finish beim Skikjöring 2002', cls: 'col-span-2' },
+  { name: 'king-george-siegerzirkel-2009.jpg', alt: 'Jakob Broger mit King George im Siegerzirkel 2009', cls: 'row-span-2' },
+  { name: 'jakob-broger-mit-pferd-und-ski.png', alt: 'Jakob Broger mit Pferd und Ski im Siegerzirkel', cls: '' },
+  { name: 'jakob-broger-portrait-im-schnee.png', alt: 'Jakob Broger im Schnee', cls: '' },
+  { name: 'jakob-broger-siegerzirkel.png', alt: 'Jakob Broger mit Pferd vor der Engadiner Bergkulisse', cls: 'col-span-2' },
 ];
 
 // A full-size WebP per gallery photo, used by the lightbox.
