@@ -7,6 +7,7 @@ const links = [
   { href: '#statistik', label: 'Statistik' },
   { href: '#impressionen', label: 'Impressionen' },
   { href: '#sponsoring', label: 'Sponsoring' },
+  { href: 'https://www.skikjoering.ch', label: 'Skijöring', external: true },
 ];
 ---
 
@@ -35,7 +36,13 @@ const links = [
     <ul class="hidden items-center gap-7 text-sm font-medium md:flex">
       {links.map((l) => (
         <li>
-          <a href={l.href} data-spy={l.href} class="nav-link nav-title transition-colors hover:opacity-70">
+          <a
+            href={l.href}
+            data-spy={l.external ? undefined : l.href}
+            target={l.external ? '_blank' : undefined}
+            rel={l.external ? 'noopener noreferrer' : undefined}
+            class="nav-link nav-title transition-colors hover:opacity-70"
+          >
             {l.label}
           </a>
         </li>
@@ -46,7 +53,12 @@ const links = [
   <ul id="nav-mobile" class="hidden border-t border-frost bg-snow px-5 py-3 md:hidden">
     {links.map((l) => (
       <li class="py-2">
-        <a href={l.href} class="block text-base text-ink/80">{l.label}</a>
+        <a
+          href={l.href}
+          target={l.external ? '_blank' : undefined}
+          rel={l.external ? 'noopener noreferrer' : undefined}
+          class="block text-base text-ink/80"
+        >{l.label}</a>
       </li>
     ))}
   </ul>
